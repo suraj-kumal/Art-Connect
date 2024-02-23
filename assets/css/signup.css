@@ -1,0 +1,70 @@
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  background-color: #f0f0f0;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #d3d3d3, -8px -8px 16px #ffffff;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+}
+
+.input-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  box-shadow: inset 4px 4px 8px #d3d3d3, inset -4px -4px 8px #ffffff;
+  color: #333;
+}
+
+.input-container-l {
+  position: relative;
+  margin-top: 20px;
+}
+
+.btn-sub button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: grey;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px #d3d3d3, -4px -4px 8px #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-sub button:hover {
+  background-color: black;
+}
+
+.login-si {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+.wl {
+  margin: 1rem;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}

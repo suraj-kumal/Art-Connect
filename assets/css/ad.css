@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.bio {
+  margin: 0.5rem;
+}
+.img {
+  width: 400px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+.aimg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  width: 100%; /* Ensure the image takes the full width of the container */
+  height: 100%; /* Ensure the image takes the full height of the container */
+  box-shadow: 8px 8px 16px #d3d3d3, -8px -8px 16px #ffffff;
+}
+.img-w {
+  display: flex;
+  justify-content: center;
+}
+.nam {
+  display: flex;
+  justify-content: center;
+}
+.bio {
+  margin: 3rem;
+  margin-top: 1rem;
+}
+.bio p {
+  text-align: justify;
+  font-weight: 500;
+}
+.review {
+  display: flex;
+  justify-content: center;
+}
+.review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.r-w {
+  width: 80%;
+  max-width: 800px;
+}
+
+.comments-section {
+  margin-bottom: 20px;
+}
+
+.comment {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 8px #d3d3d3, -2px -2px 8px #ffffff;
+}
+
+.comment p {
+  margin: 0;
+}
+
+.bin {
+  width: 17px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.comment form {
+  margin-top: 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: grey;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px #d3d3d3, -2px -2px 8px #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: black;
+}
+
+button.dc {
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px #d3d3d3, -2px -2px 8px #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+button.dc:hover {
+  background-color: grey;
+}
+
+.login-message {
+  margin-top: 10px;
+  color: #ff0000;
+}
+li.rating {
+  list-style: none;
+}
+ul.rating {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.rat {
+  display: flex;
+  justify-content: center;
+}
+span.rev {
+  font-weight: 100;
+  font-style: italic;
+  font-family: auto;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 500px) {
+  .bio {
+    margin: 0.5rem;
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select `csit77_suraj`.`instructor`.`dept_name` AS `dept_name`,sum(`csit77_suraj`.`instructor`.`salary`) AS `total_salary` from `csit77_suraj`.`instructor` group by `csit77_suraj`.`instructor`.`dept_name`
+md5=94de8603aaaf94f6680031557895aa75
+updatable=0
+algorithm=0
+definer_user=root
+definer_host=localhost
+suid=2
+with_check_option=0
+timestamp=0001689248093274920
+create-version=2
+source=SELECT dept_name, SUM(salary) AS total_salary FROM instructor GROUP BY dept_name
+client_cs_name=utf8mb4
+connection_cl_name=utf8mb4_general_ci
+view_body_utf8=select `csit77_suraj`.`instructor`.`dept_name` AS `dept_name`,sum(`csit77_suraj`.`instructor`.`salary`) AS `total_salary` from `csit77_suraj`.`instructor` group by `csit77_suraj`.`instructor`.`dept_name`
+mariadb-version=100428

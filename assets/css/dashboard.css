@@ -1,0 +1,181 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* h1,
+h2 {
+  color: #007bff;
+} */
+
+.post-art {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  width: 500px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #495057;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+form.updatebio {
+  padding: 1rem;
+}
+.artimg {
+  width: 400px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.artimage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  width: 100%; /* Ensure the image takes the full width of the container */
+  height: 100%; /* Ensure the image takes the full height of the container */
+}
+.artgallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.art-item {
+  margin: 2rem;
+  padding: 2rem;
+  border: solid 1px grey;
+}
+button.sell {
+  background-color: lightgreen;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.sell:hover {
+  background-color: green;
+}
+button.delete {
+  background-color: red;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.delete:hover {
+  background-color: darkred;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 4.5rem;
+  margin-bottom: 0;
+}
+.ya {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2.ya {
+  color: black;
+  text-decoration: underline;
+}
+.arts-with-bids {
+  margin: 2rem;
+  padding: 1rem;
+  border: solid 1px black;
+}
+.update-bio {
+  margin: 2rem;
+  padding: 2rem;
+  border: solid 1px grey;
+}
+.ad {
+  display: flex;
+  justify-content: center;
+}
+.wrap-pa {
+  display: flex;
+  justify-content: center;
+}
+.success {
+  color: lightgreen;
+}
+.fail {
+  color: red;
+}
+.msg {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+span.sold-msg {
+  background: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 35px;
+  color: white;
+}
+@media only screen and (max-width: 500px) {
+  .art-item {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+  .arts-with-bids {
+    margin: 0.2rem;
+    padding: 0.2rem;
+  }
+  .artimg {
+    width: 270px;
+  }
+  .update-bio {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+  span.sold-msg {
+    margin: 0.2rem;
+    width: 50px;
+  }
+}

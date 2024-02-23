@@ -1,0 +1,130 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container-input {
+  position: relative;
+}
+
+.input {
+  width: 150px;
+  padding: 10px 0px 10px 40px;
+  border-radius: 9999px;
+  border: solid 1px #333;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  opacity: 0.8;
+}
+
+.container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+}
+
+.input:focus {
+  opacity: 1;
+  width: 250px;
+}
+.search {
+  display: flex;
+  justify-content: center;
+}
+.artimg {
+  width: 600px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.artimage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  width: 100%; /* Ensure the image takes the full width of the container */
+  height: 100%; /* Ensure the image takes the full height of the container */
+}
+.art-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.art-piece {
+  margin: 10px;
+}
+.filter {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+}
+button.category {
+  color: black;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px #d3d3d3, -4px -4px 8px #ffffff;
+  transition: background-color 0.3s ease;
+}
+button.category:active {
+  color: white;
+  background-color: black;
+}
+button.category:hover {
+  color: white;
+  background-color: grey;
+}
+button.btn {
+  display: none;
+}
+.det {
+  margin-left: 1.5rem;
+}
+.title-auc {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  text-decoration: underline;
+}
+@media only screen and (max-width: 500px) {
+  .artimg {
+    width: 315px;
+  }
+  .filter {
+    flex-wrap: wrap;
+  }
+  button.category {
+    margin: 0.5rem;
+  }
+  .det {
+    margin: 0;
+  }
+  h1.aa {
+    font-size: 22px;
+  }
+  .title-auc {
+    margin: 1rem;
+    margin-bottom: 2rem;
+  }
+  h2.artname {
+    font-size: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  p.artArtist {
+    font-size: 13px;
+  }
+  p.arttype {
+    font-size: 13px;
+  }
+}

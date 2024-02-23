@@ -1,0 +1,179 @@
+body {
+  max-width: 100%;
+}
+.art-main {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 7%;
+}
+img.artimage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.artimg {
+  width: 600px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+}
+.artdetail {
+  width: 500px;
+}
+p.artDescription {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: justify;
+}
+.des {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+p.arttype {
+  text-decoration: underline;
+}
+span.framesize {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.bid {
+  margin: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+.err {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.err-msg p {
+  color: red;
+}
+p.success {
+  color: rgb(87, 255, 87);
+}
+.input-container {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 350px;
+}
+.input-container input {
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  outline: none;
+}
+.input-container .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.input-container input:focus ~ .label,
+.input-container input:valid ~ .label {
+  top: -20px;
+  font-size: 16px;
+  color: #333;
+}
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+.input-container input:focus ~ .underline,
+.input-container input:valid ~ .underline {
+  transform: scaleX(1);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+button {
+  background-color: gray;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  transition: all 1s ease;
+}
+button:hover {
+  background-color: black;
+}
+.wrapbid {
+  display: flex;
+  justify-content: center;
+}
+.win {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+p.sold-msg {
+  font-size: 22px;
+  color: lightgreen;
+}
+.sold {
+  display: flex;
+  justify-content: center;
+  margin: 5rem;
+}
+.sold-i {
+  background: red;
+  padding: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+}
+.containercart {
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+  margin-top: 1rem;
+}
+.pr {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+@media only screen and (max-width: 500px) {
+  .art-main {
+    display: block;
+    width: 90vw;
+    overflow: hidden;
+  }
+  .des {
+    width: 85vw;
+    margin: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .err {
+    width: 100%;
+  }
+  .artimg {
+    aspect-ratio: auto;
+  }
+  .p-c{
+    text-align: center;
+
+  }
+}

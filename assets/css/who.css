@@ -1,0 +1,62 @@
+/* ./assets/css/who.css */
+
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrap {
+  background-color: #f0f0f0;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #d3d3d3, -8px -8px 16px #ffffff;
+  text-align: center;
+}
+
+.outline {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #d3d3d3, -8px -8px 16px #ffffff;
+  text-align: center;
+}
+
+.su_as h3 {
+  color: #333;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: grey;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px #d3d3d3, -4px -4px 8px #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: black;
+}
+
+.or {
+  margin-top: 20px;
+}
+
+.ortxt {
+  color: #333;
+  background-color: #f0f0f0;
+  padding: 0 10px;
+}
+@media only screen and(max-width:500px) {
+  button.btn {
+    width: 200px;
+  }
+}

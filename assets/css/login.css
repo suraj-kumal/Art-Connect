@@ -1,0 +1,90 @@
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  background-color: #f0f0f0;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #d3d3d3, -8px -8px 16px #ffffff;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  box-shadow: inset 4px 4px 8px #d3d3d3, inset -4px -4px 8px #ffffff;
+  color: #333;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: grey;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px #d3d3d3, -4px -4px 8px #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: black;
+}
+
+.sign-up {
+  margin-top: 20px;
+  color: #333;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.fp {
+  margin: 1rem;
+}
+a.f {
+  text-decoration: underline;
+  font-weight: 600;
+}
+p.fail{
+  color:red;
+}
+.msg{
+  display: flex;
+  justify-content: center;
+}
+.home{
+  margin: 1rem;
+}
+a.h{
+  text-decoration: underline;
+}

@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.err {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.err-msg p {
+  color: red;
+}
+.artimg {
+  width: 600px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.artimage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.art-piece {
+  margin: 10px;
+}
+.my-cart {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+.gallery {
+  margin: 1.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+}
+@media only screen and (max-width: 500px) {
+  .err-msg p {
+    font-size: 13px;
+  }
+  .artimg {
+    width: 285px;
+  }
+  .gallery {
+    margin: 0.1rem;
+    padding: 0.1rem;
+    justify-content: center;
+  }
+  .art-piece {
+    border: solid 1px black;
+    padding: 0.5rem;
+  }
+}
