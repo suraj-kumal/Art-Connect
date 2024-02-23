@@ -1,3 +1,3 @@
 # ArtConnect
 
-A platform for artists and art explorers
+A platform for Artists and enthusiastic Art Lovers
