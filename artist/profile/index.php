@@ -7,7 +7,7 @@ try {
     $pdo = new PDO('mysql:host=localhost;dbname=artconnect', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo 'Error connecting to the database: ' . $e->getMessage();
+    // echo 'Error connecting to the database: ' . $e->getMessage();
     die();
 }
 if (!isset($_SESSION['buyer_id'])) {
@@ -19,8 +19,9 @@ if (!isset($_SESSION['buyer_id'])) {
 if (isset($_GET['id'])) {
     $artistId = $_GET['id'];
 
+
     // Retrieve artist information
-    $stmtArtist = $pdo->prepare('SELECT fullname, email, phone, bio FROM artist WHERE id = ?');
+    $stmtArtist = $pdo->prepare('SELECT fullname, email, phone, bio, rating FROM artist WHERE id = ?');
     $stmtArtist->execute([$artistId]);
     $artistInfo = $stmtArtist->fetch(PDO::FETCH_ASSOC);
 
@@ -34,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comment']) && 
     $buyerId = $_SESSION['buyer_id'];
     $artistId = $_GET['id'];
     $commentText = $_POST['comment_text'];
-    echo $buyerId;
 
     // Retrieve buyer's name from the database
     $stmtBuyerName = $pdo->prepare('SELECT fullname FROM buyer WHERE id = ?');
@@ -71,6 +71,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_comment'])) {
 $stmtComments = $pdo->prepare('SELECT * FROM comments WHERE artist_id = ?');
 $stmtComments->execute([$artistId]);
 $comments = $stmtComments->fetchAll(PDO::FETCH_ASSOC);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_rating'])) {
+    // Assuming you have a session variable for buyer_id
+    $buyerId = $_SESSION['buyer_id'];
+    $artistId = $_GET['id'];
+    $userRating = $_POST['rating'];
+
+    // Check if the user has already rated
+    $stmtCheckRated = $pdo->prepare('SELECT * FROM rated WHERE artist_id = ? AND buyer_id = ?');
+    $stmtCheckRated->execute([$artistId, $buyerId]);
+
+    if ($stmtCheckRated->rowCount() === 0) {
+        // User hasn't rated yet, get the current artist rating
+        $stmtGetArtistRating = $pdo->prepare('SELECT rating FROM artist WHERE id = ?');
+        $stmtGetArtistRating->execute([$artistId]);
+        $currentRating = $stmtGetArtistRating->fetch(PDO::FETCH_ASSOC)['rating'];
+
+        // Calculate the new average rating
+        $newRating = ($currentRating + $userRating) / 2;
+
+        // Update the artist table with the new average rating
+        $stmtUpdateArtistRating = $pdo->prepare('UPDATE artist SET rating = ? WHERE id = ?');
+        $stmtUpdateArtistRating->execute([$newRating, $artistId]);
+
+        // Mark the user as rated in the 'rated' table
+        $stmtMarkRated = $pdo->prepare('INSERT INTO rated (artist_id, buyer_id) VALUES (?, ?)');
+        $stmtMarkRated->execute([$artistId, $buyerId]);
+
+        // Redirect to the same page to prevent form resubmission
+        header("Location: {$_SERVER['PHP_SELF']}?id={$artistId}");
+        exit();
+    } else {
+        echo "";
+    }
+}
+$buyerId = $_SESSION['buyer_id'];
+$CheckRated = $pdo->prepare('SELECT * FROM rated WHERE artist_id = ? AND buyer_id = ?');
+$CheckRated->execute([$artistId, $buyerId]);
+
+
 ?>
 
 
@@ -126,19 +166,65 @@ $comments = $stmtComments->fetchAll(PDO::FETCH_ASSOC);
         <?php else: ?>
             <p>Artist not found or data not available.</p>
         <?php endif; ?>
-        <div class="rating">
-            
+        <div class="a-rating">
+
             <div class="rating-w">
-                <div class="rat">
-                    <h3>Ratings</h3>
+                <div class="rating">
+                    <p>Artist Rating:</p>
+                    <?php if ($artistInfo['rating'] == 0): ?>
+                        <p>
+                            No one has given ratings yet
+                        </p>
+                    <?php else: ?>
+                        <p>
+                            <?php echo $artistInfo['rating']; ?>/5
+                        </p>
+                    <?php endif; ?>
                 </div>
-                <ul class="rating">
-                    <li class="rating"><img src="./star.svg" alt="rating"></li>
-                    <li class="rating"><img src="./star.svg" alt="rating"></li>
-                    <li class="rating"><img src="./star.svg" alt="rating"></li>
-                    <li class="rating"><img src="./star.svg" alt="rating"></li>
-                    <li class="rating"><img src="./star.svg" alt="rating"></li>
-                </ul>
+
+                <?php if (!isset($_SESSION['buyer_id'])): ?>
+                    <div class="err">
+                        <p></p>
+                    </div>
+                    <? echo $CheckRated; ?>
+                <?php elseif ($CheckRated->rowCount() === 1): ?>
+                    <div class="err">
+                        <p></p>
+                    </div>
+                <?php elseif ($CheckRated->rowCount() === 0): ?>
+                    <div class="form">
+                        <form method='post' action="<?php echo $_SERVER['PHP_SELF'] . '?id=' . $artistId; ?>"
+                            id='ratingForm'>
+                            <div class='rat'>
+                                Rate the Artist
+                            </div>
+                            <div class='rating-stars'>
+                                <div class='rating'>
+                                    <input type='radio' id='star5' name='rating' value='5'>
+                                    <label for='star5'></label>
+                                    <input type='radio' id='star4' name='rating' value='4'>
+                                    <label for='star4'></label>
+                                    <input type='radio' id='star3' name='rating' value='3'>
+                                    <label for='star3'></label>
+                                    <input type='radio' id='star2' name='rating' value='2'>
+                                    <label for='star2'></label>
+                                    <input type='radio' id='star1' name='rating' value='1'>
+                                    <label for='star1'></label>
+                                </div>
+                            </div>
+                            <div class="bt">
+                                <button type='submit' name='submit_rating'>Submit Rating</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                <?php endif; ?>
+
+
+
+
+
             </div>
         </div>
         <div class="review">
@@ -173,7 +259,6 @@ $comments = $stmtComments->fetchAll(PDO::FETCH_ASSOC);
                     }
                     ?>
                 </div>
-                <img src="" alt="">
 
 
                 <!-- Review Form -->

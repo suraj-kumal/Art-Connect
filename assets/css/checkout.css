@@ -128,9 +128,15 @@ p.note {
   text-align: justify;
   font-style: italic;
 }
-a.nep{
+a.nep {
   text-decoration: underline;
   font-style: normal;
+}
+p.note {
+  width: 50vw;
+}
+a.li-n {
+  text-decoration: underline;
 }
 @media only screen and (max-width: 500px) {
   .artimg {

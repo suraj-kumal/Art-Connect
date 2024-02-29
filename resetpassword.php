@@ -2,7 +2,6 @@
 
 $success = "";
 $fail = " ";
-// Assuming you have a database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,7 +9,7 @@ $dbname = "artconnect";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-$result = null; // Initialize $result variable
+$result = null;
 
 if (isset($_GET['token']) && isset($_GET['type'])) {
     $token = $_GET['token'];

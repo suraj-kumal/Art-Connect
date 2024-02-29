@@ -144,9 +144,13 @@ if ($deliveryStatusResult) {
                         <?php echo $deliveryStatus; ?>
                     </p>
 
-                    <p class="note">"Please note that the artwork will be<br> dispatched for delivery through<br> <a
-                            href="https://www.nepxpress.com/" target="_blank" class="nep">NepXpress Logistics</a><br> within two
-                        days of successful payment."</p>
+                    <p class="note">"Please note that we are partnered with nepXpress Logistics, and the artwork will be
+                        dispatched for delivery by them safely.
+                        PAN No. 1234567890.
+                        (You can check the active status using this PAN number. You can do so by visiting the website
+                        <a href="https://ird.gov.np/" class="li-n" target="_blank">ird.gov.np</a>.)
+                        Contact number :9841234563"
+                    </p>
                     <?php if (empty($district) && empty($location)): ?>
                         <div class="delivery-form">
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . '?artId=' . $artId); ?>"

@@ -148,6 +148,55 @@ span.rev {
   font-family: auto;
   text-align: justify;
 }
+.rating {
+  display: inline-block;
+  opacity: 1;
+  width: 100%;
+  text-align: center;
+}
+.bt {
+  display: flex;
+  justify-content: center;
+}
+.a-rating {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating input {
+  display: none;
+  opacity: 1;
+}
+
+.rating label {
+  float: right;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.rating label:before {
+  content: "\2605"; /* Unicode character for a solid star */
+  font-size: 30px;
+  transition: color 0.3s;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #ffc300; /* Yellow color for selected/hovered stars */
+  transform: scale(1.2);
+  transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+  animation: bounce 0.5s ease-in-out alternate;
+}
+
+@keyframes bounce {
+  to {
+    transform: scale(1.3);
+  }
+}
 
 @media only screen and (max-width: 500px) {
   .bio {
